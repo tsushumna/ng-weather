@@ -1,0 +1,13 @@
+.location-style{
+    background-color: #337ab7;
+    color:white;
+    padding:6px;
+    width: fit-content;
+    margin-right: 0.75em;
+    cursor: pointer;
+}
+
+.style-block{
+    display: flex !important;
+    margin-bottom: 0.15em;
+}

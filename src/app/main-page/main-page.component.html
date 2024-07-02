@@ -1,6 +1,14 @@
 <div class="container-fluid">
 
   <app-zipcode-entry> </app-zipcode-entry>
-  <app-current-conditions></app-current-conditions>
+  <div class="style-block">
+    <div *ngFor="let location of currentConditionsByZip();let i = index;" class="location-style" 
+    (click)="selectedIndex = i">
+       {{location.data.name}}
+       <span (click)="removeLoc(location)">&times;</span>
+  </div>
+</div>
+  {{selectedIndex }}
+  <app-current-conditions *ngIf="selectedIndex >= 0" [selectedLocation] = "selectedIndex" ></app-current-conditions>
 
 </div>
