@@ -9,3 +9,8 @@ export interface LocationUpdate {
     action : string;
     zip : string;
 }
+
+export interface TabTitle {
+    title : string;
+    zip : string;
+}

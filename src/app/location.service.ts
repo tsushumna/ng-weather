@@ -15,17 +15,21 @@ export class LocationService {
     let locString = localStorage.getItem(LOCATIONS);
     if (locString)
       this.locations = JSON.parse(locString);
-    for (let loc of this.locations){
+    this.locations.forEach(loc => {
       const locationData : LocationUpdate = { action :'add', zip : loc};
-      this.locationUpdate.next(locationData);
-    }
+      setTimeout(() => this.locationUpdate.next(locationData),10);
+    });
+      
       // this.weatherService.addCurrentConditions(loc);
   }
 
   addLocation(zipcode : string) {
-    this.locations.push(zipcode);
+    let index = this.locations.indexOf(zipcode);
+    if(index === -1){
+      this.locations.push(zipcode);
     this.locationUpdate.next({action : 'add' , zip :zipcode});
     localStorage.setItem(LOCATIONS, JSON.stringify(this.locations));
+    }
     // this.weatherService.addCurrentConditions(zipcode);
   }
 

@@ -15,7 +15,7 @@ export class CurrentConditionsComponent implements OnInit {
   private router = inject(Router);
   protected locationService = inject(LocationService);
   protected currentConditionsByZip: Signal<ConditionsAndZip[]> = this.weatherService.getCurrentConditions();
-
+  location;
 
   ngOnInit(): void {
     this.locationService.locationUpdate.subscribe(locationUpdate => {
