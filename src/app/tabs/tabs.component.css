@@ -1,0 +1,17 @@
+.tab-style{
+    background-color: #3333e5;
+    color:white;
+    width:fit-content;
+    padding:0.25em;
+    margin-left:0.25em;
+}
+
+.closed{
+    cursor: pointer;
+    color: white;
+    margin: 0 0.25em;
+}
+
+.display-flex{
+    display: flex;
+}
