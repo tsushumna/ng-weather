@@ -1,8 +1,8 @@
 <div class="display-flex">
     <div *ngFor="let title of titles" class="tab-style" >
         <div class="display-flex" (click)="onTabSelection(title)">
-           <div> {{title.data.name}} </div>
-            <span (click)="removeLocation(title)"  class="closed">&times;</span>
+           <div class="cursor-pointer"> {{title.data.name}} </div>
+            <span (click)="removeLocation(title)"  class="closed cursor-pointer">&times;</span>
         </div>
     </div>
 </div>

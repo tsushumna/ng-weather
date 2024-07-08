@@ -10,6 +10,7 @@ export class LocationService {
 
   locations : string[] = [];
   locationUpdate = new BehaviorSubject<LocationUpdate>(null);
+  selectedLocation;
 
   constructor() {
     let locString = localStorage.getItem(LOCATIONS);
@@ -27,8 +28,8 @@ export class LocationService {
     let index = this.locations.indexOf(zipcode);
     if(index === -1){
       this.locations.push(zipcode);
-    this.locationUpdate.next({action : 'add' , zip :zipcode});
-    localStorage.setItem(LOCATIONS, JSON.stringify(this.locations));
+      this.locationUpdate.next({action : 'add' , zip :zipcode});
+      localStorage.setItem(LOCATIONS, JSON.stringify(this.locations));
     }
     // this.weatherService.addCurrentConditions(zipcode);
   }

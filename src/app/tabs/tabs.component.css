@@ -7,11 +7,14 @@
 }
 
 .closed{
-    cursor: pointer;
     color: white;
     margin: 0 0.25em;
 }
 
 .display-flex{
     display: flex;
+}
+
+.cursor-pointer{
+    cursor: pointer;
 }
