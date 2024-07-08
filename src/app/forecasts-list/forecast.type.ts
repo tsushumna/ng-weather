@@ -4,6 +4,8 @@ export interface Forecast {
     message: number;
     cnt:     number;
     list:    List[];
+    validUpto: Date;
+
 }
 
 export interface City {
